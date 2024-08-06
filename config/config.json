@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "root",
+    "password": "Root@123",
+    "database": "product_service_db",
+    "host": "localhost",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "root",
+    "password": "Root@123",
+    "database": "product_service_db",
+    "host": "localhost",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "root",
+    "password": "Root@123",
+    "database": "product_service_db",
+    "host": "localhost",
+    "dialect": "mysql"
+  }
+}
