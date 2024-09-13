@@ -1,0 +1,10 @@
+{
+  "name": "Product Service",
+  "short_name": "PS",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#3367D6",
+  "theme_color": "#3367D6"
+}
