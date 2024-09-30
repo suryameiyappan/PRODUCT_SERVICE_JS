@@ -1,0 +1,2 @@
+2024-09-30 13:09:29 error: Error sending email: 80F893CF877F0000:error:0A00010B:SSL routines:ssl3_get_record:wrong version number:../deps/openssl/openssl/ssl/record/ssl3_record.c:331:
+
