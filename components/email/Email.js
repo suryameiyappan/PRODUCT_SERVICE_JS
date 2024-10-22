@@ -1,6 +1,6 @@
 const 
   Component = require("../Component"),
-  { getSubProduct } = require("../../config/factory-config/sub-modules.config");
+  { loadFactory } = require("../../config/factory-config/modules.config");
 
 class Email extends Component {
   /*
@@ -9,7 +9,7 @@ class Email extends Component {
   |--------------------------------------------------------------------------
   */
   async execute(request, response, next) {
-    let checkEmail = await getSubProduct(request.body.action);
+    let checkEmail = await loadFactory(request.body.action, "SubProductRoutes");
     if (!checkEmail) {
       throw new Error(
         `${request.body.component} Component : ${request.body.action} method not found`
