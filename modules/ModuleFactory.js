@@ -1,5 +1,6 @@
 const 
   ModuleFactoryInterface = require("./ModuleFactoryInterface"),
+  { PRODUCT_ROUTES } = require("../constants/modules.constant"),
   { loadFactory } = require("../config/factory-config/modules.config");
 
 class ModuleFactory extends ModuleFactoryInterface {
@@ -9,7 +10,7 @@ class ModuleFactory extends ModuleFactoryInterface {
   |--------------------------------------------------------------------------
   */
   async get(module) {
-    const moduleClass = await loadFactory(module, "ProductRoutes");
+    const moduleClass = await loadFactory(module, PRODUCT_ROUTES);
     if (!moduleClass) throw new Error(`Undefined module: ${module}`);
     return new moduleClass();
   }
