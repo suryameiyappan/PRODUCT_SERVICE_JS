@@ -1,6 +1,6 @@
 const 
   ComponentFactoryInterface = require("./ComponentFactoryInterface"),
-  { getProduct } = require("../config/factory-config/modules.config");
+  { loadFactory } = require("../config/factory-config/modules.config");
 
 class ComponentFactory extends ComponentFactoryInterface {
   /*
@@ -9,7 +9,7 @@ class ComponentFactory extends ComponentFactoryInterface {
   |--------------------------------------------------------------------------
   */
   async get(component) {
-    const componentClass = await getProduct(component);
+    const componentClass = await loadFactory(component, "ProductRoutes");
     if (!componentClass) throw new Error(`Undefined component: ${component}`)
     return new componentClass();
   }
