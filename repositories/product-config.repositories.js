@@ -1,10 +1,8 @@
-const 
-  model = require("../models"),
-  { ProductRoutes, SubProductRoutes, ValidatorConfig } = model;
+const model = require("../models");
 
-async function productRoutes(product) {
+async function productConfig(product, repo) {
   try {
-    return await ProductRoutes.findOne({
+    return await model[repo].findOne({
       where: {
         product : product,
         is_active : 1
@@ -15,34 +13,6 @@ async function productRoutes(product) {
   }
 }
 
-async function subProductRoutes(subProduct) {
-  try {
-    return await SubProductRoutes.findOne({
-      where: {
-        product : subProduct,
-        is_active : 1
-      }
-    });
-  } catch (error) {
-    throw new Error(`Product Config Repository subProductRoutes Method : ${error}`);
-  }
-}
-
-async function validatorConfig(validator) {
-  try {
-    return await ValidatorConfig.findOne({
-      where: {
-        product : validator,
-        is_active : 1
-      }
-    });
-  } catch (error) {
-    throw new Error(`Product Config Repository validatorConfig Method : ${error}`);
-  }
-}
-
 module.exports = {
-  productRoutes: productRoutes,
-  validatorConfig: validatorConfig,
-  subProductRoutes: subProductRoutes
+  productConfig: productConfig
 };
