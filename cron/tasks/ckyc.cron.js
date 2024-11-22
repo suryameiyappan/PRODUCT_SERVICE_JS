@@ -17,11 +17,11 @@ cron.schedule('0 * * * *', () => {
         "module": "ckyc",
         "provider": "CORE",
         "data": {
-            "ckyc_document_type": "PAN",
-            "ckyc_document_id": "C",
-            "ckyc_document_number": "IXPPS1223A",
-            "ckyc_dob": "1986-01-01",
-            "quote_id": "PLT1084"
+            "ckyc_document_type": "",
+            "ckyc_document_id": "",
+            "ckyc_document_number": "",
+            "ckyc_dob": "",
+            "quote_id": ""
         }
     })
   }).then(response => {
